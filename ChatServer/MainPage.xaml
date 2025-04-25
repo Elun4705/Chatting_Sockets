@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChatServer.MainPage">
+
+    <ScrollView>
+        <HorizontalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <VerticalStackLayout
+                Spacing="25"
+                Padding="30,0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label
+                    HorizontalOptions="Center"
+                    Text="Participants"
+                    FontSize="20"
+                    />
+                <Border
+                    HorizontalOptions="Center"
+                    Stroke="black"
+                    StrokeThickness="2"
+                    Background ="white">
+                    <Editor
+                        IsReadOnly="True"
+                        x:Name="ParticipantListServer"
+                        FontSize="10"
+                        WidthRequest="300"
+                        HeightRequest="300"/>
+                </Border>
+                <Button
+                    x:Name="ServerControl"
+                    Text="Start Server"
+                    Pressed="ChangeServerStatus"
+                    />
+
+            </VerticalStackLayout>
+            <VerticalStackLayout
+                Spacing="25"
+                Padding="30,0"
+                >
+                
+                <HorizontalStackLayout>
+                    <Label
+                        VerticalOptions="Center"
+                        Text="Server Name:"
+                        FontSize="12"
+                        />
+                    <Entry
+                        VerticalOptions="Center"
+                        x:Name="ServerName"
+                        Text="localhost"
+                        IsReadOnly="True"
+                        FontSize="12"
+                        WidthRequest="100"
+                        />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label
+                        VerticalOptions="Center"
+                        Text="Server IP Address:"
+                        FontSize="12"
+                        />
+                    <Entry
+                        VerticalOptions="Center"
+                        x:Name="ServerIP"
+                        FontSize="12"
+                        IsReadOnly="True"
+                        WidthRequest="100"
+                        />
+                </HorizontalStackLayout>
+                <Border
+                    HorizontalOptions="Center"
+                    Stroke="black"
+                    StrokeThickness="2"
+                    Background ="white">
+                    <Editor
+                        x:Name="ChatHistory"
+                        IsReadOnly="True"
+                        FontSize="10"
+                        Text="Chat History will appear below"
+                        WidthRequest="300"
+                        HeightRequest="400"/>
+                </Border>
+            </VerticalStackLayout>
+
+        </HorizontalStackLayout>
+    </ScrollView>
+
+</ContentPage>
